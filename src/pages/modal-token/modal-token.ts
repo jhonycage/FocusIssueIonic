@@ -73,6 +73,6 @@ export class ModalTokenPage {
       this.lengthIsValid = true;
     } else {
       this.lengthIsValid = false;
-    }
+    } 
   }
 }
