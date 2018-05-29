@@ -1,0 +1,25 @@
+<ion-content no-padding>
+  <div class="top">
+    <div class="icon-container">
+      <img [src]="imgUrl">
+    </div>
+    <div class="title">
+      {{title}}
+    </div>
+    <div class="message">
+      {{message}}
+    </div>
+    <form [formGroup]="tokenForm">
+      <div>
+        <ion-input (ionChange)="validateLength()" class="input-token" id="token" type="text" maxlength="6" formControlName="token" #token></ion-input>
+      </div>
+    </form>
+    <div class="close-img" (click)="closeModal()">
+      <img src="assets/imgs/closeicon_token.svg">
+    </div>
+    <button [disabled]="!lengthIsValid" hidden-md-down ion-button full id="btnValidate" class="modal-btn" (click)="validateToken()">Continuar</button>
+  </div>
+</ion-content>
+<ion-footer hidden-lg-up>
+  <button [hidden]="!lengthIsValid" ion-button full id="btnValidate" class="modal-btn" (click)="validateToken()">Continuar</button>
+</ion-footer>
